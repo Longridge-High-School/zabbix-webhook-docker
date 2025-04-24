@@ -44,7 +44,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: openschoolbell/tts
+          images: longridgehighschool/zabbix-webhook
           tags: |
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
@@ -73,9 +73,9 @@ jobs:
           DOCKER_USER: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASS: ${{ secrets.DOCKER_PASSWORD }}
         with:
-          destination_container_repo: openschoolbell/tts
+          destination_container_repo: longridgehighschool/zabbix-webhook
           provider: dockerhub
-          short_description: 'Opensource School Bell system - Text To Speech'
+          short_description: 'Push to Zabbix using a webhook'
           readme_file: 'README.md'
 
       # This ugly bit is necessary if you don't want your cache to grow forever
